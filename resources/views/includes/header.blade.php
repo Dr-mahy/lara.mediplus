@@ -16,8 +16,9 @@
                 <div class="col-lg-6 col-md-7 col-12">
                     <!-- Top Contact -->
                     <ul class="top-contact">
-                        <li><i class="fa fa-phone"></i>+880 1234 56789</li>
-                        <li><i class="fa fa-envelope"></i><a href="mailto:support@yourmail.com">support@yourmail.com</a></li>
+                        {{-- <li><i class="fa fa-phone"></i>+880 1234 56789</li> --}}
+                        <li><a href="{{ LaravelLocalization::getLocalizedURL('en') }}"><h3>english</h3></a></li>
+                        <li><a href="{{ LaravelLocalization::getLocalizedURL('ar') }}"><h3>العربية</h3></a></li>
                     </ul>
                     <!-- End Top Contact -->
                 </div>
@@ -45,12 +46,12 @@
                         <div class="main-menu">
                             <nav class="navigation">
                                 <ul class="nav menu">
-                                    <li class="{{request()->is('home')? "active":""}}"><a href="{{route('home')}}">Home <i class="icofont-rounded-down"></i></a>
+                                    <li class="{{request()->is('home')? "active":""}}"><a href="{{route('home')}}">{{__('message.Home')}}<i class="icofont-rounded-down"></i></a>
                                         <ul class="dropdown">
                                             <li><a href="index.html">Home Page 1</a></li>
                                         </ul>
                                     </li>
-                                    <li class="{{request()->is('doctors')?"active":""}}"><a href="{{route('doctors')}}">Doctors </a></li>
+                                    <li class="{{request()->is('doctors')?"active":""}}"><a href="{{route('doctors')}}">{{__('message.Doctors')}}</a></li>
                                     <li class="{{request()->is('services')? "active":""}}"><a href="{{route('services')}}">Services </a></li>
                                     <li class="{{request()->is('pages')?"active":""}}"><a href="{{route('pages')}}">Pages <i class="icofont-rounded-down"></i></a>
                                         <ul class="dropdown">
@@ -70,7 +71,7 @@
                     </div>
                     <div class="col-lg-2 col-12">
                         <div class="get-quote">
-                            <a href="appointment.html" class="btn">Book Appointment</a>
+                            <a href="appointment.html" class="btn">{{__('message.Book_Appointment')}}</a>
                         </div>
                     </div>
                 </div>
